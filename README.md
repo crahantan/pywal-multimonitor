@@ -10,7 +10,6 @@
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-green.svg"></a>
 </p>
 
-<img src="https://i.imgur.com/HhK3LDv.jpg" alt="img" align="right" width="400px">
 
 ## Pywal 
 Pywal is a tool that generates a color palette from the dominant colors in an image. It then applies the colors system-wide and on-the-fly in all of your favourite programs.  
@@ -22,6 +21,8 @@ Pywal also supports predefined themes and has over 250 themes built-in. You can 
 The goal of Pywal was to be as out of the way as possible. It doesn't modify any of your existing configuration files. Instead it works around them and provides tools to integrate your system as you see fit.
 
 Terminal emulators and TTYs have their color-schemes updated in real-time with no delay. With minimal configuration this functionality can be extended to almost anything running on your system.
+
+<img src="https://i.imgur.com/HhK3LDv.jpg" alt="img" align="right" width="400px">
 
 ## Pywal Multimonitor
 Same for multimonitor.
