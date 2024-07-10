@@ -1,4 +1,4 @@
-<h3 align="center">Pywal Xinerama Version</h3>
+<h3 align="center">Pywal Xinerama </h3>
 <h3 align="center"><img src="https://i.imgur.com/5WgMACe.gif" width="200px"></h3>
 <p align="center">Generate and change color-schemes on the fly.</p>
 
