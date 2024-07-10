@@ -28,4 +28,5 @@ Same for multimonitor.
 
 
 <h3 align="center">Pywall Documentation</h3>
+
 ### More: \[[Installation](https://github.com/dylanaraps/pywal/wiki/Installation)] \[[Getting Started](https://github.com/dylanaraps/pywal/wiki/Getting-Started)] \[[Customization](https://github.com/dylanaraps/pywal/wiki/Customization)] \[[Wiki](https://github.com/dylanaraps/pywal/wiki)] \[[Screenshots](https://www.reddit.com/r/unixporn/search?q=wal&restrict_sr=on&sort=relevance&t=all)]
