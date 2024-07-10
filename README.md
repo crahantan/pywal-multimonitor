@@ -1,4 +1,4 @@
-<h3 align="center">Pywal Multimonitor Version</h3>
+<h3 align="center">Pywal Xinerama Version</h3>
 <h3 align="center"><img src="https://i.imgur.com/5WgMACe.gif" width="200px"></h3>
 <p align="center">Generate and change color-schemes on the fly.</p>
 
@@ -25,8 +25,8 @@ The goal of Pywal was to be as out of the way as possible. It doesn't modify any
 Terminal emulators and TTYs have their color-schemes updated in real-time with no delay. With minimal configuration this functionality can be extended to almost anything running on your system.
 
 
-## Pywal Multimonitor
-Same for multimonitor.
+## Pywal Xinerama
+Same for Xinerama-multimonitor.
 
 
 <h3 align="center">Pywall Documentation</h3>
