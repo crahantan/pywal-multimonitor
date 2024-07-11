@@ -1,4 +1,5 @@
 """Set the wallpaper."""
+
 import ctypes
 import logging
 import os
@@ -45,16 +46,25 @@ def xfconf(img):
     xfconf_re = re.compile(
         r"^/backdrop/screen\d/monitor(?:0|\w*)/"
         r"(?:(?:image-path|last-image)|workspace\d/last-image)$",
-        flags=re.M
+        flags=re.M,
     )
     xfconf_data = subprocess.check_output(
         ["xfconf-query", "--channel", "xfce4-desktop", "--list"],
-        stderr=subprocess.DEVNULL
-    ).decode('utf8')
+        stderr=subprocess.DEVNULL,
+    ).decode("utf8")
     paths = xfconf_re.findall(xfconf_data)
     for path in paths:
-        util.disown(["xfconf-query", "--channel", "xfce4-desktop",
-                     "--property", path, "--set", img])
+        util.disown(
+            [
+                "xfconf-query",
+                "--channel",
+                "xfce4-desktop",
+                "--property",
+                path,
+                "--set",
+                img,
+            ]
+        )
 
 
 def set_wm_wallpaper(img):
@@ -88,6 +98,12 @@ def set_wm_wallpaper(img):
         return
 
 
+def set_wm_xinerama_wallpaper(img):
+    """Set the xinerama wallpaper on no desktop environments"""
+    """*require:feh"""
+    util.disown(["feh", "--bg-fill", "--no-xinerama", img])
+
+
 def set_desktop_wallpaper(desktop, img):
     """Set the wallpaper for the desktop environment."""
     desktop = str(desktop).lower()
@@ -96,26 +112,42 @@ def set_desktop_wallpaper(desktop, img):
         xfconf(img)
 
     elif "muffin" in desktop or "cinnamon" in desktop:
-        util.disown(["gsettings", "set",
-                     "org.cinnamon.desktop.background",
-                     "picture-uri", "file://" + urllib.parse.quote(img)])
+        util.disown(
+            [
+                "gsettings",
+                "set",
+                "org.cinnamon.desktop.background",
+                "picture-uri",
+                "file://" + urllib.parse.quote(img),
+            ]
+        )
 
     elif "gnome" in desktop or "unity" in desktop:
-        util.disown(["gsettings", "set",
-                     "org.gnome.desktop.background",
-                     "picture-uri", "file://" + urllib.parse.quote(img)])
+        util.disown(
+            [
+                "gsettings",
+                "set",
+                "org.gnome.desktop.background",
+                "picture-uri",
+                "file://" + urllib.parse.quote(img),
+            ]
+        )
 
     elif "mate" in desktop:
-        util.disown(["gsettings", "set", "org.mate.background",
-                     "picture-filename", img])
+        util.disown(
+            ["gsettings", "set", "org.mate.background", "picture-filename", img]
+        )
 
     elif "sway" in desktop:
         util.disown(["swaymsg", "output", "*", "bg", img, "fill"])
 
     elif "awesome" in desktop:
-        util.disown(["awesome-client",
-                     "require('gears').wallpaper.maximized('{img}')"
-                    .format(**locals())])
+        util.disown(
+            [
+                "awesome-client",
+                "require('gears').wallpaper.maximized('{img}')".format(**locals()),
+            ]
+        )
 
     elif "kde" in desktop:
         string = """
@@ -124,8 +156,15 @@ def set_desktop_wallpaper(desktop, img):
             d.currentConfigGroup = Array("Wallpaper", "org.kde.image",
             "General");d.writeConfig("Image", "%s")};
         """
-        util.disown(["qdbus", "org.kde.plasmashell", "/PlasmaShell",
-                     "org.kde.PlasmaShell.evaluateScript", string % img])
+        util.disown(
+            [
+                "qdbus",
+                "org.kde.plasmashell",
+                "/PlasmaShell",
+                "org.kde.PlasmaShell.evaluateScript",
+                string % img,
+            ]
+        )
     else:
         set_wm_wallpaper(img)
 
@@ -136,18 +175,18 @@ def set_mac_wallpaper(img):
     db_path = os.path.join(HOME, db_file)
 
     # Put the image path in the database
-    sql = "insert into data values(\"%s\"); " % img
+    sql = 'insert into data values("%s"); ' % img
     subprocess.call(["sqlite3", db_path, sql])
 
     # Get the index of the new entry
     sql = "select max(rowid) from data;"
     new_entry = subprocess.check_output(["sqlite3", db_path, sql])
-    new_entry = new_entry.decode('utf8').strip('\n')
+    new_entry = new_entry.decode("utf8").strip("\n")
 
     # Get all picture ids (monitor/space pairs)
-    get_pics_cmd = ['sqlite3', db_path, "select rowid from pictures;"]
+    get_pics_cmd = ["sqlite3", db_path, "select rowid from pictures;"]
     pictures = subprocess.check_output(get_pics_cmd)
-    pictures = pictures.decode('utf8').split('\n')
+    pictures = pictures.decode("utf8").split("\n")
 
     # Clear all existing preferences
     sql += "delete from preferences; "
@@ -155,8 +194,8 @@ def set_mac_wallpaper(img):
     # Write all pictures to the new image
     for pic in pictures:
         if pic:
-            sql += 'insert into preferences (key, data_id, picture_id) '
-            sql += 'values(1, %s, %s); ' % (new_entry, pic)
+            sql += "insert into preferences (key, data_id, picture_id) "
+            sql += "values(1, %s, %s); " % (new_entry, pic)
 
     subprocess.call(["sqlite3", db_path, sql])
 
