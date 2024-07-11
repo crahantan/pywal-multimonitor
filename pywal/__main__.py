@@ -246,6 +246,8 @@ def parse_args(parser):
     if not args.n:
         if args.x:
             wallpaper.set_wm_xinerama_wallpaper(colors_plain["wallpaper"])
+        if args.R:
+            wallpaper.set_wm_xinerama_wallpaper(colors_plain["wallpaper"])
         else:
             wallpaper.change(colors_plain["wallpaper"])
 
