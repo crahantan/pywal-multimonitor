@@ -1,5 +1,5 @@
 <h1 align="center">Pywal Xinerama </h1 >
-<h2 align="center"><img src="./img.jpg" width="600px"></h2>
+<h1 align="center"><h1 src="./img.jpg" width="600px"></h1>
 
 # [Dwm dotfiles](https://github.com/crahantan/dotfiles_dwm)
 
@@ -18,6 +18,7 @@ $ export PATH=$HOME/.local/bin:$PATH
 ```
 
 ## Dependencies
+*Pywal dependencies
 *imagemagick
 *feh
 
@@ -29,7 +30,7 @@ $ wal -x /path/to/img
 
 ## Reload wallpaper Xinerama
 ```
-$wal -X
+$ wal -X
 ```
 
 ### NOTE: set `wal -R &` on your `.xinitrc` file
