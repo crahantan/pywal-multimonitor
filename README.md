@@ -33,7 +33,7 @@ $ wal -x /path/to/img
 $ wal -X
 ```
 
-### NOTE: set `wal -R &` on your `.xinitrc` file
+### NOTE: set `wal -X &` on your `.xinitrc` file
 
 # [Pywal](https://github.com/dylanaraps/pywal) 
 <h3 align="center"><img src="https://i.imgur.com/5WgMACe.gif" width="200px"></h3>
