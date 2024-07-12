@@ -7,7 +7,7 @@
 # [Pywal Xinerama](https://github.com/crahantan/pywal-xinerama)
 
 ## Why?
-The goal of this version is set wallpapers on Xinerama mode for WM like: dwm, i3 and so on. 
+The goal of this version is set wallpapers on Xinerama mode on two or more monitors for WM like: dwm, i3 and so on. 
 
 ## Installation 
 ```
