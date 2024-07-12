@@ -1,4 +1,5 @@
 <h1 align="center">Pywal Xinerama </h1 >
+<h3 align="center"><img src="./img.jpg" width="400px"></h3>
 
 
 # [Pywal Xinerama](https://github.com/crahantan/pywal-xinerama)
@@ -8,21 +9,25 @@ The goal of this version is set wallpapers on Xinerama mode for WM like: dwm, i3
 
 ## Installation 
 ```
-$git clone https://github.com/crahantan/pywal-xinerama.git
-$cd pywal-xinerama
-$pip install --user .
-$export PATH=$HOME/.local/bin:$PATH
+$ git clone https://github.com/crahantan/pywal-xinerama.git
+$ cd pywal-xinerama
+$ pip install --user .
+$ export PATH=$HOME/.local/bin:$PATH
 ```
+
+## Dependencies
+*imagemagick
+*feh
 
 ## Usage 
-### Set wallpaper
+### Set wallpaper Xinerama
 ```
-$wal -x /path/to/img
+$ wal -x /path/to/img
 ```
 
-## Reload wallpaper
+## Reload wallpaper Xinerama
 ```
-$wal -R 
+$wal -X
 ```
 
 ### NOTE: set `wal -R &` on your `.xinitrc` file
