@@ -23,12 +23,12 @@ $ export PATH=$HOME/.local/bin:$PATH
 *feh
 
 ## Usage 
-### Set wallpaper Xinerama
+### Set wallpaper 
 ```
 $ wal -x /path/to/img
 ```
 
-## Reload wallpaper Xinerama
+### Reload wallpaper 
 ```
 $ wal -X
 ```
