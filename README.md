@@ -1,6 +1,6 @@
 <h1 align="center">Pywal Xinerama </h1 >
 <h2 align="center"><img src="./img.jpg" width="600px"></h2>
-# [Dotfiles dwm:](https://github.com/crahantan/dotfiles_dwm)
+# [Dwm dotfiles](https://github.com/crahantan/dotfiles_dwm)
 
 
 # [Pywal Xinerama](https://github.com/crahantan/pywal-xinerama)
