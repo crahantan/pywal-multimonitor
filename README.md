@@ -1,5 +1,5 @@
 <h1 align="center">Pywal Xinerama </h1 >
-<h2 align="center"><h1 src="./img.jpg" width="600px"></h2>
+<h1 align="center"><img src="img.jpg" width="600px"></h1>
 
 # [Dwm dotfiles](https://github.com/crahantan/dotfiles_dwm)
 
