@@ -133,6 +133,10 @@ def get_args():
     arg.add_argument("-R", action="store_true", help="Restore previous colorscheme.")
 
     arg.add_argument(
+        "-X", action="store_true", help="Restore previous colorscheme on Xinerama mode"
+    )
+
+    arg.add_argument(
         "-s", action="store_true", help="Skip changing colors in terminals."
     )
 
@@ -187,6 +191,7 @@ def parse_args_exit(parser):
         and not args.x
         and not args.theme
         and not args.R
+        and not args.X
         and not args.w
         and not args.backend
     ):
@@ -232,6 +237,9 @@ def parse_args(parser):
     if args.R:
         colors_plain = theme.file(os.path.join(CACHE_DIR, "colors.json"))
 
+    if args.X:
+        colors_plain = theme.file(os.path.join(CACHE_DIR, "colors.json"))
+
     if args.w:
         cached_wallpaper = util.read_file(os.path.join(CACHE_DIR, "wal"))
         colors_plain = colors.get(
@@ -246,7 +254,7 @@ def parse_args(parser):
     if not args.n:
         if args.x:
             wallpaper.set_wm_xinerama_wallpaper(colors_plain["wallpaper"])
-        if args.R:
+        elif args.X:
             wallpaper.set_wm_xinerama_wallpaper(colors_plain["wallpaper"])
         else:
             wallpaper.change(colors_plain["wallpaper"])
