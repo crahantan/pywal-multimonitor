@@ -1,8 +1,5 @@
 <h1 align="center">Pywal Xinerama </h1 >
-<<<<<<< HEAD
-<h2 align="center"><h1 src="./img.jpg" width="600px"></h2>
-=======
->>>>>>> e58cb78 (R Img)
+<h1 align="center"><h1 src="./img.jpg" width="600px"></h1>
 
 # [Dwm dotfiles](https://github.com/crahantan/dotfiles_dwm)
 
